@@ -182,32 +182,46 @@
             font-size: 0.95rem;
         }
 
+        /* ESTILOS MEJORADOS PARA LAS IMÁGENES MÁS GRANDES */
         .visuals {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
         }
 
         .visual-item {
             background: #f0f8ff;
             border: 2px solid var(--amarillo-vivo);
-            border-radius: 10px;
-            padding: 15px;
+            border-radius: 12px;
+            padding: 20px;
             text-align: center;
-            width: 150px;
-            font-size: 0.9rem;
-            color: var(--azul-profundo);
-            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .visual-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .visual-item img {
             width: 100%;
-            height: 90px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 8px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .visual-item p {
+            color: var(--azul-profundo);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: auto;
+            line-height: 1.4;
         }
 
         .highlight {
@@ -262,6 +276,25 @@
             
             header h1 {
                 font-size: 2rem;
+            }
+            
+            .visuals {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            
+            .visual-item img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .visuals {
+                grid-template-columns: 1fr;
+            }
+            
+            .visual-item img {
+                height: 200px;
             }
         }
     </style>
@@ -400,23 +433,23 @@
             <h2>Datos Visuales</h2>
             <div class="visuals">
                 <div class="visual-item">
-                    <img src="https://raw.githubusercontent.com/StreetFather2/Infografia-Calculo-Diferencial-Actividad-4/7cfdd122afbe715f467d174de189461bbd55d783/images/INFOGRAFIA%20FOTO%201.PNG">
+                    <img src="https://raw.githubusercontent.com/StreetFather2/Infografia-Calculo-Diferencial-Actividad-4/7cfdd122afbe715f467d174de189461bbd55d783/images/INFOGRAFIA%20FOTO%201.PNG" alt="Mandala Geométrico">
                     <p>Construcción mediante rotaciones repetidas</p>
                 </div>
                 <div class="visual-item">
-                    <img src="/images/INFOGRAFIA FOTO 2.PNG" alt="Copo de Nieve">
+                    <img src="https://raw.githubusercontent.com/StreetFather2/Infografia-Calculo-Diferencial-Actividad-4/7cfdd122afbe715f467d174de189461bbd55d783/images/INFOGRAFIA%20FOTO%202.PNG" alt="Copo de Nieve">
                     <p>Simetría radial en la naturaleza</p>
                 </div>
                 <div class="visual-item">
-                    <img src="/images/INFOGRAFIA FOTO 3.PNG" alt="GeoGebra">
+                    <img src="https://raw.githubusercontent.com/StreetFather2/Infografia-Calculo-Diferencial-Actividad-4/7cfdd122afbe715f467d174de189461bbd55d783/images/INFOGRAFIA%20FOTO%203.PNG" alt="GeoGebra">
                     <p>Interfaz de construcción dinámica</p>
                 </div>
                 <div class="visual-item">
-                    <img src="/images/INFOGRAFIA FOTO 4.PNG" alt="Pentágono Áureo">
+                    <img src="https://raw.githubusercontent.com/StreetFather2/Infografia-Calculo-Diferencial-Actividad-4/7cfdd122afbe715f467d174de189461bbd55d783/images/INFOGRAFIA%20FOTO%204.PNG" alt="Pentágono Áureo">
                     <p>Proporción áurea en flores y arte</p>
                 </div>
                 <div class="visual-item">
-                    <img src="/images/INFOGRAFIA FOTO 5.PNG" alt="Triángulo de Sierpinski">
+                    <img src="https://raw.githubusercontent.com/StreetFather2/Infografia-Calculo-Diferencial-Actividad-4/7cfdd122afbe715f467d174de189461bbd55d783/images/INFOGRAFIA%20FOTO%205.PNG" alt="Triángulo de Sierpinski">
                     <p>Estructura fractal con simetría recursiva</p>
                 </div>
             </div>
@@ -443,5 +476,3 @@
     </div>
 </body>
 </html>
-
-
