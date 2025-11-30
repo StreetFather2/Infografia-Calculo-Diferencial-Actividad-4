@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Descubriendo la Simetría</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-profundo: #005883;
+            --amarillo-vivo: #F0B429;
+            --naranja-energético: #F47920;
+            --gris-oscuro: #333333;
+            --gris-medio: #B3B3B3;
+            --gris-claro: #808080;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: white;
+            color: var(--gris-oscuro);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--azul-profundo), var(--naranja-energético));
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
+        }
+
+        .section h2 {
+            color: var(--amarillo-vivo);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-family: 'Bebas Neue', cursive;
+            border-bottom: 3px solid var(--naranja-energético);
+            padding-bottom: 10px;
+        }
+
+        .section-content {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+            min-width: 300px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--azul-profundo);
+        }
+
+        .card h3 {
+            color: var(--naranja-energético);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .card p, .card ul {
+            color: #444;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid var(--amarillo-vivo);
+        }
+
+        .timeline-time {
+            font-weight: bold;
+            color: var(--naranja-energético);
+            min-width: 80px;
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .timeline-content h4 {
+            color: var(--amarillo-vivo);
+            margin-bottom: 5px;
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .speakers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .speaker-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .speaker-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--gris-medio);
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gris-oscuro);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .speaker-name {
+            color: var(--amarillo-vivo);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .speaker-title {
+            color: var(--gris-medio);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .speaker-bio {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .visuals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .visual-item {
+            background: #f0f8ff;
+            border: 2px solid var(--amarillo-vivo);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 150px;
+            font-size: 0.9rem;
+            color: var(--azul-profundo);
+            font-weight: 600;
+        }
+
+        .visual-item img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid var(--naranja-energético);
+            border: 1px solid #eee;
+        }
+
+        .highlight h4 {
+            color: var(--amarillo-vivo);
+            margin-bottom: 10px;
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 2px solid var(--gris-medio);
+            border-radius: 10px;
+            color: var(--gris-oscuro);
+        }
+
+        a {
+            color: var(--naranja-energético);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .section-content {
+                flex-direction: column;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .timeline-time {
+                min-width: auto;
+                text-align: left;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quinto Workshop de la Cadena de Ciencias Básicas</h1>
+            <p>Día de las Matemáticas - Explorando la lógica, el cálculo y la modelización con herramientas digitales</p>
+        </header>
+
+        <div class="section">
+            <h2>Agenda del Día</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">08:00 AM</div>
+                    <div class="timeline-content">
+                        <h4>Conferencia Nacional: Descubriendo la Simetría</h4>
+                        <p>Un viaje lúdico por la lógica matemática con GeoGebra. El docente Daniel Steven Morán Pizarro nos guiará en la creación de mandalas geométricos utilizando herramientas tecnológicas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">10:30 AM</div>
+                    <div class="timeline-content">
+                        <h4>Conferencia Nacional: Dominando con Puertas Lógicas</h4>
+                        <p>Con Thinken Car, el docente Alexis Trujillo García nos mostrará cómo transformar el pensamiento abstracto en circuitos físicos reales.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">12:00 PM</div>
+                    <div class="timeline-content">
+                        <h4>Receso</h4>
+                        <p>Tiempo para descansar y prepararse para la sesión de la tarde.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">01:00 PM</div>
+                    <div class="timeline-content">
+                        <h4>Conferencia Nacional: Interpretación Geométrica de la Derivada</h4>
+                        <p>El docente Ernesto Araujo Chavarro nos explicará el concepto de derivada y su aplicación práctica mediante GeoGebra, incluyendo problemas de optimización.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">02:30 PM</div>
+                    <div class="timeline-content">
+                        <h4>Conferencia Nacional: Tecnologías Digitales como Mediadores</h4>
+                        <p>El Dr. Fredy Villamisar Araque nos presentará cómo las tecnologías digitales facilitan los procesos de modelización matemática en contextos reales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Ponentes Destacados</h2>
+            <div class="speakers">
+                <div class="speaker-card">
+                    <div class="speaker-photo">DM</div>
+                    <div class="speaker-name">Daniel Steven Morán Pizarro</div>
+                    <div class="speaker-title">Director del curso de Ecuaciones Diferenciales</div>
+                    <div class="speaker-bio">Matemático colombiano, doctor en ciencias matemáticas, especialista en álgebra computacional y teoría de ideales. Lidera proyectos de pensamiento computacional y educación STEAM.</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-photo">AT</div>
+                    <div class="speaker-name">Alexis Trujillo García</div>
+                    <div class="speaker-title">Licenciado en Matemáticas</div>
+                    <div class="speaker-bio">Magíster en gestión de tecnología educativa, experto en entornos virtuales de aprendizaje y uso de herramientas como GeoGebra y Matlab para potenciar el razonamiento abstracto.</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-photo">EA</div>
+                    <div class="speaker-name">Ernesto Araujo Chavarro</div>
+                    <div class="speaker-title">Docente de Cálculo Integral</div>
+                    <div class="speaker-bio">Licenciado en Matemáticas y Física, magíster en Educación con énfasis en enseñanza y aprendizaje de las matemáticas. Investigador en metodologías activas y tecnologías aplicadas al aprendizaje.</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-photo">FV</div>
+                    <div class="speaker-name">Dr. Fredy Villamisar Araque</div>
+                    <div class="speaker-title">Investigador Junior de CONACIT</div>
+                    <div class="speaker-bio">Doctor en Matemáticas Educativas, ingeniero electrónico, especializado en modelización matemática y uso de tecnologías digitales como mediadoras en el aprendizaje.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Herramientas Tecnológicas Utilizadas</h2>
+            <div class="section-content">
+                <div class="card">
+                    <h3>GeoGebra</h3>
+                    <p>Plataforma gratuita y multiplataforma que permite construir figuras geométricas, realizar cálculos dinámicos y visualizar funciones. Ideal para explorar simetrías, derivadas y modelización matemática.</p>
+                    <p>Características clave:</p>
+                    <ul>
+                        <li>Interactividad y visualización dinámica</li>
+                        <li>Soporte para geometría, álgebra, cálculo y estadística</li>
+                        <li>Capacidad de crear recursos educativos compartibles</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Thinken Car</h3>
+                    <p>Software educativo abierto que permite diseñar y simular circuitos electrónicos. Ideal para aprender sobre puertas lógicas, circuitos combinacionales y fundamentos de la electrónica digital.</p>
+                    <p>Características clave:</p>
+                    <ul>
+                        <li>Simulación de circuitos en tiempo real</li>
+                        <li>Biblioteca de componentes electrónicos</li>
+                        <li>Interfaz intuitiva para estudiantes y educadores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Conceptos Clave Abordados</h2>
+            <div class="section-content">
+                <div class="card">
+                    <h3>Simetría Matemática</h3>
+                    <p>La invariancia bajo transformaciones como rotación, reflexión y traslación. Aplicaciones en arte, naturaleza y diseño.</p>
+                    <p>Actividad práctica: Creación de mandalas geométricos mediante secuencias automatizadas en GeoGebra.</p>
+                </div>
+                <div class="card">
+                    <h3>Puertas Lógicas</h3>
+                    <p>Bloques de construcción de la tecnología digital: AND, OR, NOT, NAND, NOR, XOR, XNOR. Combinaciones para crear circuitos lógicos complejos.</p>
+                    <p>Aplicación: Construcción de circuitos combinacionales para resolver problemas lógicos.</p>
+                </div>
+                <div class="card">
+                    <h3>Derivada e Interpretación Geométrica</h3>
+                    <p>La derivada como pendiente de la recta tangente a una curva. Aplicaciones en optimización de áreas y volúmenes.</p>
+                    <p>Ejemplo práctico: Diseño de un envase cilíndrico que minimice el material utilizado para un volumen dado.</p>
+                </div>
+                <div class="card">
+                    <h3>Modelización Matemática</h3>
+                    <p>Proceso de traducir situaciones reales a modelos matemáticos, analizarlos y usarlos para entender y predecir fenómenos del mundo real.</p>
+                    <p>Aplicación: Estudio de la conservación de energía y análisis de trayectorias óptimas usando simulaciones y análisis de video.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Datos Visuales</h2>
+            <div class="visuals">
+                <div class="visual-item">
+                    <img src="https://placehold.co/150x90/005883/FFFFFF?text=Mandala+Geométrico" alt="Mandala Geométrico">
+                    <p>Construcción mediante rotaciones repetidas</p>
+                </div>
+                <div class="visual-item">
+                    <img src="https://placehold.co/150x90/F47920/FFFFFF?text=Copo+de+Nieve" alt="Copo de Nieve">
+                    <p>Simetría radial en la naturaleza</p>
+                </div>
+                <div class="visual-item">
+                    <img src="https://placehold.co/150x90/005883/FFFFFF?text=GeoGebra" alt="GeoGebra">
+                    <p>Interfaz de construcción dinámica</p>
+                </div>
+                <div class="visual-item">
+                    <img src="https://placehold.co/150x90/F0B429/005883?text=Pentágono+Áureo" alt="Pentágono Áureo">
+                    <p>Proporción áurea en flores y arte</p>
+                </div>
+                <div class="visual-item">
+                    <img src="https://placehold.co/150x90/F47920/FFFFFF?text=Triángulo+de+Sierpinski" alt="Triángulo de Sierpinski">
+                    <p>Estructura fractal con simetría recursiva</p>
+                </div>
+                <div class="visual-item">
+                    <img src="https://placehold.co/150x90/F0B429/005883?text=Arte+Indígena" alt="Arte Indígena">
+                    <p>Patrones simétricos en culturas originarias</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Conclusión</h2>
+            <p>La simetría no es solo un concepto abstracto, sino una <strong>manifestación universal</strong> presente en la naturaleza, el arte y la tecnología. A través de <strong>GeoGebra</strong>, los estudiantes pueden explorarla de forma interactiva, desarrollando tanto intuición geométrica como habilidades de pensamiento computacional. Esta aproximación lúdica transforma la enseñanza de las matemáticas en una experiencia creativa y significativa, abriendo caminos hacia la innovación educativa y la comprensión profunda de los principios matemáticos.</p>
+        </div>
+
+        <div class="section">
+            <h2>Fuentes</h2>
+            <p><strong>Conferencista:</strong> Daniel Steven Morán Pizarro (Matemático, Universidad Nacional Abierta y a Distancia – UNAD)</p>
+            <p><strong>Grabación de la conferencia:</strong> <a href="https://www.youtube.com/watch/kReAr6lvY1o" target="_blank">Ver en YouTube</a></p>
+            <p><strong>Evento:</strong> Quinto Workshop de Ciencias Básicas – Red Curricular de Lógica, Álgebra y Cálculo (2025)</p>
+            <p><strong>Recursos adicionales:</strong> <a href="https://www.geogebra.org/" target="_blank">GeoGebra.org</a></p>
+        </div>
+
+        <footer>
+            <p><strong>Diseñado por:</strong> Malkon Adenir Álvarez Muñoz</p>
+            <p>Estudiante de Ingeniería Multimedia</p>
+            <p>Infografía realizada para el Quinto Workshop de Ciencias Básicas – 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
+
